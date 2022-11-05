@@ -10,5 +10,7 @@ namespace ASP_Project.ViewModels
     {
         public List<Slider> Sliders { get; set; }
         public List<Service> Services { get; set; }
+        public List<Product> Products { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
     }
 }

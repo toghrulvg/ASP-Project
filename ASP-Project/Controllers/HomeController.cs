@@ -22,9 +22,15 @@ namespace ASP_Project.Controllers
         public IActionResult Index()
         {
             List<Slider> slider = _context.Sliders.ToList();
+            List<Service> services = _context.Services.ToList();
+            List<Product> products = _context.Products.ToList();
+            List<ProductImage> productImages = _context.ProductImages.ToList();
             HomeVM home = new HomeVM
             {
-                Sliders = slider
+                Sliders = slider,
+                Services = services,
+                Products = products,
+                ProductImages = productImages
             };
             return View(home);
         }

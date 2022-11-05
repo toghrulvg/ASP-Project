@@ -17,8 +17,17 @@ namespace ASP_Project.Data
 
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Service>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Product>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<ProductImage>().HasQueryFilter(m => !m.IsDeleted);
+        }
 
     }
 }

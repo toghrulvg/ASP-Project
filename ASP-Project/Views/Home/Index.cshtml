@@ -36,43 +36,27 @@
         <div class="container">
             <div class="row">
                 <!-- single policy item start -->
-                <div class="col-lg-4">
-                    <div class="service-policy-item mt-30 bg-1">
-                        <div class="policy-icon">
-                            <img src="assets/img/icon/policy-1.png" alt="policy icon">
-                        </div>
-                        <div class="policy-content">
-                            <h5 class="policy-title">FREE SHIPPING</h5>
-                            <p class="policy-desc">Free shipping on all order</p>
+                
+                <!-- single policy item start -->
+                <!-- single policy item start -->
+                
+                <!-- single policy item start -->
+                <!-- single policy item start -->
+                @foreach (var item in Model.Services)
+                {
+                    <div class="col-lg-4">
+                        <div style="background-color: @item.Color" class="service-policy-item mt-30 ">
+                            <div class="policy-icon">
+                                <img src="assets/img/icon/@item.Icon" alt="policy icon">
+                            </div>
+                            <div class="policy-content">
+                                <h5 class="policy-title">@item.Header</h5>
+                                <p class="policy-desc">@item.Desc</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- single policy item start -->
-                <!-- single policy item start -->
-                <div class="col-lg-4">
-                    <div class="service-policy-item mt-30 bg-2">
-                        <div class="policy-icon">
-                            <img src="assets/img/icon/policy-2.png" alt="policy icon">
-                        </div>
-                        <div class="policy-content">
-                            <h5 class="policy-title">ONLINE SUPPORT</h5>
-                            <p class="policy-desc">Online support 24 hours a day</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single policy item start -->
-                <!-- single policy item start -->
-                <div class="col-lg-4">
-                    <div class="service-policy-item mt-30 bg-3">
-                        <div class="policy-icon">
-                            <img src="assets/img/icon/policy-3.png" alt="policy icon">
-                        </div>
-                        <div class="policy-content">
-                            <h5 class="policy-title">MONEY RETURN</h5>
-                            <p class="policy-desc">Back guarantee under 5 days</p>
-                        </div>
-                    </div>
-                </div>
+                }
+
                 <!-- single policy item start -->
             </div>
         </div>
@@ -93,30 +77,39 @@
                 <div class="col-12">
                     <div class="product-carousel-4 mbn-50 slick-row-15 slick-arrow-style">
                         <!-- product single item start -->
-                        <div class="product-item mb-50">
-                            <div class="product-thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/product/product-1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h5 class="product-name">
-                                    <a href="product-details.html">Leather Mens Slipper</a>
-                                </h5>
-                                <div class="price-box">
-                                    <span class="price-regular">$80.00</span>
-                                    <span class="price-old"><del>$70.00</del></span>
-                                </div>
-                                <div class="product-action-link">
-                                    <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                    <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#quick_view">
-                                        <span data-toggle="tooltip"
-                                              title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                        @foreach (var product in Model.Products)
+                        {
+                            <div class="product-item mb-50">
+                                <div class="product-thumb">
+                                    <a href="product-details.html">
+                                        @foreach (var image in product.ProductImages)
+                                        {
+                                            
+                                            <img src="assets/img/product/@image.Image" alt="">
+                                        }
+
                                     </a>
                                 </div>
+                                <div class="product-content">
+                                    <h5 class="product-name">
+                                        <a href="product-details.html">@product.Name</a>
+                                    </h5>
+                                    <div class="price-box">
+                                        <span class="price-regular">@product.Price</span>
+                                        <span class="price-old"><del>@((product.Price* product.Discount).ToString("0.####"))</del></span>
+                                    </div>
+                                    <div class="product-action-link">
+                                        <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                        <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
+                                        <a href="#" data-toggle="modal" data-target="#quick_view">
+                                            <span data-toggle="tooltip"
+                                                  title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        }
+
                         <!-- product single item start -->
                         <!-- product single item start -->
                         <div class="product-item mb-50">
