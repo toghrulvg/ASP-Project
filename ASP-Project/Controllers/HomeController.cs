@@ -1,4 +1,6 @@
-﻿using ASP_Project.Models;
+﻿using ASP_Project.Data;
+using ASP_Project.Models;
+using ASP_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,16 +13,20 @@ namespace ASP_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _context;
+        public HomeController(AppDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Slider> slider = _context.Sliders.ToList();
+            HomeVM home = new HomeVM
+            {
+                Sliders = slider
+            };
+            return View(home);
         }
 
         public IActionResult Privacy()
