@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e9MkMbV0MXNaAZMNEGuGe4vfSKnVfrD4z8doydmBIYJaL3YCaaP9q7BZ5Gp4c+TvkXKUaD3aLFjqiWUJzXcUMg==",
+  "dgSpecHash": "J8IEZ2N0A7/BtS4hqYvAYmViMrc4YkzuBJiqLgPZtUUoIXbPv8QXBM040LHW2kjl9LrdA1HklqbSzdNAAh4lBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\toghrulvg\\Desktop\\ASP-Project\\ASP-Project\\ASP-Project.csproj",
+  "projectFilePath": "C:\\Users\\toghrulvg\\Desktop\\bruh\\ASP-Project\\ASP-Project\\ASP-Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\toghrulvg\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\toghrulvg\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

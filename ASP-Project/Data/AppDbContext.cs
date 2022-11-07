@@ -19,6 +19,9 @@ namespace ASP_Project.Data
         public DbSet<Service> Services { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<TwinBlogs> TwinBlogs { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Brand> Brands { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +30,9 @@ namespace ASP_Project.Data
             modelBuilder.Entity<Service>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Product>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<ProductImage>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<TwinBlogs>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Brand>().HasQueryFilter(m => !m.IsDeleted);
         }
 
     }

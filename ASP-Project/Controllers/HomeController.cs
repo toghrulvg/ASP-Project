@@ -25,16 +25,23 @@ namespace ASP_Project.Controllers
             List<Service> services = _context.Services.ToList();
             List<Product> products = _context.Products.ToList();
             List<ProductImage> productImages = _context.ProductImages.ToList();
+            List<TwinBlogs> twinBlogs = _context.TwinBlogs.ToList();
+            List<Blog> blogs = _context.Blogs.Take(4).ToList();
+            List<Brand> brands = _context.Brands.ToList();
+
             HomeVM home = new HomeVM
             {
                 Sliders = slider,
                 Services = services,
                 Products = products,
-                ProductImages = productImages
+                ProductImages = productImages,
+                TwinBlogs = twinBlogs,
+                Blogs = blogs,
+                Brands = brands
             };
             return View(home);
         }
-
+        
         public IActionResult Privacy()
         {
             return View();

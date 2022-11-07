@@ -12,5 +12,8 @@ namespace ASP_Project.ViewModels
         public List<Service> Services { get; set; }
         public List<Product> Products { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public List<TwinBlogs> TwinBlogs { get; set; }
+        public List<Blog> Blogs { get; set; }
+        public List<Brand> Brands { get; set; }
     }
 }
