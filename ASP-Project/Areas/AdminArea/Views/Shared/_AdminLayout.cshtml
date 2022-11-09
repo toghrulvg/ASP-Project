@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="~/Admin/css/spur.css">
+    <script src="https://kit.fontawesome.com/b472a11a71.js" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="~/Admin/js/chart-js-config.js"></script>
     <title>Spur - A Bootstrap Admin Template</title>
@@ -20,15 +22,15 @@
                 <a href="#!" class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </a>
-                <a href="index.html" class="spur-logo"><i class="fas fa-bolt"></i> <span>Spur</span></a>
+                <a asp-controller="Dashboard" asp-action="Index" class="spur-logo"><i class="fas fa-bolt"></i> <span>Spur</span></a>
             </header>
             <nav class="dash-nav-list">
-                <a href="index.html" class="dash-nav-item">
+                <a  asp-controller="Dashboard" asp-action="Index" class="dash-nav-item">
                     <i class="fas fa-home"></i> Dashboard
                 </a>
                 <div class="dash-nav-dropdown">
-                    <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
-                        <i class="fas fa-chart-bar"></i> Charts
+                    <a asp-controller="Slider" asp-action="Index" class="dash-nav-item dash-nav-dropdown-toggle">
+                        <i class="fas fa-chart-bar"></i> Slider
                     </a>
                     <div class="dash-nav-dropdown-menu">
                         <a href="chartjs.html" class="dash-nav-dropdown-item">Chart.js</a>
@@ -67,8 +69,8 @@
                     </div>
                 </div>
                 <div class="dash-nav-dropdown">
-                    <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
-                        <i class="fas fa-info"></i> About
+                    <a asp-controller="Brand" asp-action="Index" class="dash-nav-item dash-nav-dropdown-toggle">
+                        <i class="fas fa-info"></i> Brands
                     </a>
                     <div class="dash-nav-dropdown-menu">
                         <a href="https://github.com/HackerThemes/spur-template" target="_blank" class="dash-nav-dropdown-item">GitHub</a>
@@ -111,8 +113,9 @@
             </header>
             <main class="dash-content">
                 <div class="container-fluid">
-                    <h1 class="dash-title">Blank</h1>
-                    <!-- put your rows / columns here -->
+                    <div>
+                        @RenderBody()
+                    </div>
                 </div>
             </main>
         </div>
@@ -125,6 +128,3 @@
 
 </html>
 
-<div>
-    @RenderBody()
-</div>

@@ -18,8 +18,8 @@ namespace ASP_Project.Models
         public string Desc { get; set; }
         [Required]
         public string Image { get; set; }
-        [Required]
         [NotMapped]
-        public IFormFile MyProperty { get; set; }
+        [Required(ErrorMessage = "Can't be empty")]
+        public IFormFile Photo { get; set; }
     }
 }
