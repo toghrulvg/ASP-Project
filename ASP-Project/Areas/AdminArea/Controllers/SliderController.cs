@@ -4,7 +4,6 @@ using ASP_Project.Models;
 using ASP_Project.ViewModels.SliderViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
@@ -32,7 +31,7 @@ namespace ASP_Project.Areas.AdminArea.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -71,12 +70,10 @@ namespace ASP_Project.Areas.AdminArea.Controllers
             };
 
             await _context.Sliders.AddAsync(newSlider);
-        
 
-        await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
-
 
         }
 
@@ -100,15 +97,6 @@ namespace ASP_Project.Areas.AdminArea.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
-
-
-
-
-
-
-
-
-
         }
 
         [HttpGet]

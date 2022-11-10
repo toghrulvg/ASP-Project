@@ -14,7 +14,7 @@
                         <p class="card-description">
                             Product
                         </p>
-                        <form asp-controller="Slider" asp-action="Create" enctype="multipart/form-data" class="forms-sample" method="post">
+                        <form asp-controller="Service" asp-action="Create" enctype="multipart/form-data" class="forms-sample" method="post">
                             <div class="form-group">
                                 <label asp-for="Title">Title</label>
                                 <input class="form-control" asp-for="Title">
@@ -30,14 +30,14 @@
                                 <input class="form-control" asp-for="SubTitle">
                                 <span asp-validation-for="SubTitle" class="text-danger my-1"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label asp-for="Photo">Photos</label>
                                 <input class="form-control" asp-for="Photo">
                                 <span asp-validation-for="Photo" class="text-danger my-1"></span>
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a asp-controller="Slider" asp-action="Index" class="btn btn-light">Cancel</a>
+                            <a asp-controller="Service" asp-action="Index" class="btn btn-light">Cancel</a>
                         </form>
                     </div>
                 </div>
@@ -48,8 +48,6 @@
 
 
 @*@section Scripts{
-    <partial name="_ValidationPartial" />
-}*@
-
-
+        <partial name="_ValidationPartial" />
+    }*@
 

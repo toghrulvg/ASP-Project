@@ -702,3 +702,16 @@ C:\Users\hp\Desktop\bruh\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\hp\Desktop\bruh\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Create.cshtml.g.cs
 C:\Users\hp\Desktop\bruh\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Edit.cshtml.g.cs
 C:\Users\hp\Desktop\bruh\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Detail.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Create.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Detail.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Edit.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Brand\Index.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Create.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Detail.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Edit.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Index.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Views\Service\Index.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Service\Index.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Service\Create.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Service\Edit.cshtml.g.cs
+C:\Users\toghrulvg\Desktop\ASP-Project\ASP-Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Service\Detail.cshtml.g.cs
