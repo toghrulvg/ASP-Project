@@ -14,6 +14,9 @@ namespace ASP_Project.Models
         public decimal Price { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal Discount { get; set; }
+        public int? SellCount { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public List<ProductImage> ProductImages { get; set; }
     }
     

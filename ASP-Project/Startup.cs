@@ -1,7 +1,9 @@
 using ASP_Project.Data;
+using ASP_Project.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +27,19 @@ namespace ASP_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(opt =>
+            {
+                opt.Password.RequireDigit = true;
+                opt.Password.RequiredLength = 8;
+                opt.Password.RequireUppercase = false;
+
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+
+                opt.Lockout.AllowedForNewUsers = true;
+            });
 
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
