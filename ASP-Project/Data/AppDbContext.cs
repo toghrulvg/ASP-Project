@@ -23,6 +23,8 @@ namespace ASP_Project.Data
         public DbSet<TwinBlogs> TwinBlogs { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +36,8 @@ namespace ASP_Project.Data
             modelBuilder.Entity<TwinBlogs>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.IsDeleted);
             modelBuilder.Entity<Brand>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Contact>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Message>().HasQueryFilter(m => !m.IsDeleted);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿<!-- main wrapper start -->
+﻿@model HomeVM
+<!-- main wrapper start -->
 <main>
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area bg-img" data-bg="assets/img/banner/breadcrumb-banner.jpg">
@@ -26,23 +27,23 @@
                 <div class="col-lg-6">
                     <div class="contact-message">
                         <h2 class="contact-title">tell us your project</h2>
-                        <form id="contact-form" action="http://whizthemes.com/mail-php/genger/mail.php" method="post" class="contact-form">
+                        <form asp-controller="Contact" asp-action="SendMessage" method="post" enctype="multipart/form-data" class="contact-form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="first_name" placeholder="Name *" type="text" required>
+                                    <input name="first_name" asp-for="Message.Name" placeholder="Name *" type="text" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="phone" placeholder="Phone *" type="text" required>
+                                    <input name="phone" asp-for="Message.Number" placeholder="Phone *" type="number" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="email_address" placeholder="Email *" type="text" required>
+                                    <input name="email_address" asp-for="Message.Email" placeholder="Email *" type="text" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input name="contact_subject" placeholder="Subject *" type="text">
+                                    <input name="contact_subject" asp-for="Message.Subject" placeholder="Subject *" type="text">
                                 </div>
                                 <div class="col-12">
                                     <div class="contact2-textarea text-center">
-                                        <textarea placeholder="Message *" name="message" class="form-control2" required=""></textarea>
+                                        <textarea placeholder="Message *" asp-for="Message.YourMessage" name="message" class="form-control2" required=""></textarea>
                                     </div>
                                     <div class="contact-btn">
                                         <button class="btn" type="submit">Send Message</button>
@@ -56,23 +57,25 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="contact-info pt-0">
-                        <h2 class="contact-title">contact us</h2>
-                        <p>
-                            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum
-                            est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum
-                            formas human.
-                        </p>
-                        <ul>
-                            <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 NewYork City</li>
-                            <li><i class="fa fa-phone"></i> info@yourdomain.com</li>
-                            <li><i class="fa fa-envelope-o"></i> +88013245657</li>
-                        </ul>
-                        <div class="working-time">
-                            <h3>Working Hours</h3>
-                            <p class="pb-0"><span>Monday – Saturday:</span>08AM – 22PM</p>
+                    @foreach (var item in Model.Contacts)
+                    {
+                        <div class="contact-info pt-0">
+                            <h2 class="contact-title">contact us</h2>
+                            <p>
+                                @item.ContactUs
+                            </p>
+                            <ul>
+                                <li><i class="fa fa-fax"></i> Address : @item.Adress</li>
+                                <li><i class="fa fa-phone"></i> @item.Email</li>
+                                <li><i class="fa fa-envelope-o"></i> +@item.Number</li>
+                            </ul>
+                            <div class="working-time">
+                                <h3>Working Hours</h3>
+                                <p class="pb-0">@item.WorkingTime</p>
+                            </div>
                         </div>
-                    </div>
+                    }
+                    
                 </div>
             </div>
         </div>

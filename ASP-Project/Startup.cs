@@ -1,5 +1,7 @@
 using ASP_Project.Data;
 using ASP_Project.Models;
+using ASP_Project.Services;
+using ASP_Project.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +38,8 @@ namespace ASP_Project
                 opt.Password.RequiredLength = 8;
                 opt.Password.RequireUppercase = false;
 
+                opt.SignIn.RequireConfirmedEmail = true; 
+
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 
                 opt.Lockout.AllowedForNewUsers = true;
@@ -44,6 +48,8 @@ namespace ASP_Project
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Database")));
+
+            services.AddScoped<IEmailService, EmailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +70,7 @@ namespace ASP_Project
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

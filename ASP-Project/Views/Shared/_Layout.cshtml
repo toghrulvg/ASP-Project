@@ -98,6 +98,13 @@
                                                 <a asp-controller="Shop" asp-action="Index">shop <i class="fa"></i></a>
 
                                             </li>
+                                            @if (User.Identity.IsAuthenticated){
+                                                <li>
+                                                <a asp-controller="Account" asp-action="Logout">Logout <i class="fa"></i></a>
+                                                <h3>@User.Identity.Name</h3>
+                                              </li>
+                                            }
+
                                             <li>
                                                 <a asp-controller="Account" asp-action="Login">Login <i class="fa"></i></a>
 
@@ -106,10 +113,7 @@
                                                 <a asp-controller="Account" asp-action="Register">Register <i class="fa"></i></a>
 
                                             </li>
-                                            <li>
-                                                <a asp-controller="Account" asp-action="Logout">Logout <i class="fa"></i></a>
-
-                                            </li>
+                                            
                                             <li>
                                                 <a asp-controller="Blog" asp-action="Index">Blog <i class="fa"></i></a>
 

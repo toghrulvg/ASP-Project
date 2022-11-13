@@ -38,7 +38,9 @@ namespace ASP_Project.Areas.AdminArea.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(BrandCreateVM brand)
         {
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid)
+                
+                return View();
 
             if (!brand.Photo.CheckFileType("image/"))
             {
